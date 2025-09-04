@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Silva - Cientista de Dados</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* ==================================================================== */
+        /* CSS FINAL PARA RESPONSIVIDADE PROFISSIONAL */
+        /* ==================================================================== */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+            flex-wrap: wrap;
+            /* <<< 1. A REGRA MAIS IMPORTANTE: Permite que os itens quebrem a linha */
+        }
+
+        .hero-text,
+        .hero-image {
+            flex: 1;
+            /* Permite que cresçam para preencher o espaço */
+            min-width: 350px;
+            /* <<< 2. LARGURA MÍNIMA: Impede o "espremimento". Se a tela for menor que ~750px, eles quebram a linha */
+        }
+
+        .hero-image {
+            height: 400px;
+            position: relative;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+
+        /* Media query para ajustes finos em telas BEM pequenas (celulares) */
+        @media screen and (max-width: 768px) {
+            .hero-content {
+                /* Apenas centraliza o texto, pois o layout já quebrou a linha naturalmente */
+                text-align: center;
+            }
+
+            .hero-image {
+                height: 300px;
+                /* Reduz a altura do gráfico no mobile */
+                margin-top: 2rem;
+            }
+
+            .nav-item {
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <div class="profile-photo-container">
+                        <img src=".//eu.jpg" alt="Foto de Marcos Roberto" class="profile-photo">
+                    </div>
+                    <a href="index.html">Marcos Roberto</a>
+                </div>
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Início</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="formacao.html" class="nav-link">Formação</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfólio</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Olá, eu sou <span class="highlight">Marcos Roberto</span></h1>
+                    <h2 class="hero-subtitle">Cientista de Dados</h2>
+                    <p class="hero-description">Transformo dados em insights valiosos para impulsionar decisões
+                        estratégicas. Especialista em Machine Learning, análise estatística e visualização de dados.</p>
+                    <div class="hero-buttons">
+                        <a href="portfolio.html" class="btn btn-primary">Ver Projetos</a>
+                        <a href="contato.html" class="btn btn-secondary">Entre em Contato</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-preview">
+            <div class="container">
+                <h2 class="section-title">Especialidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">📊</div>
+                        <h3>Análise de Dados</h3>
+                        <p>Extração de insights valiosos através de análise estatística avançada</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🤖</div>
+                        <h3>Machine Learning</h3>
+                        <p>Desenvolvimento de modelos preditivos e algoritmos de aprendizado</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📈</div>
+                        <h3>Visualização</h3>
+                        <p>Criação de dashboards e gráficos interativos para comunicar resultados</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">💡</div>
+                        <h3>Business Intelligence</h3>
+                        <p>Transformação de dados em estratégias de negócio eficazes</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🗃️</div>
+                        <h3>Preparação de Dados</h3>
+                        <p>Limpeza, transformação e organização de dados brutos para análise</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🔬</div>
+                        <h3>Modelagem Estatística</h3>
+                        <p>Aplicação de modelos para entender relações e padrões nos dados</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Marcos Roberto - Cientista de Dados. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script do Gráfico com Seta -->
+    <script>
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const lineColor = '#28a745';
+        const arrowSvg =
+            `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="${lineColor}" d="M6 0L12 6L6 12L4.5 10.5L8.25 6.75H0V5.25H8.25L4.5 1.5L6 0Z"/></svg>`;
+        const arrowDataUrl = `data:image/svg+xml,${encodeURIComponent(arrowSvg)}`;
+        const arrowImage = new Image();
+        arrowImage.src = arrowDataUrl;
+        const lineData = [80, 120, 160, 140, 180, 220, 260, 240, 280, 320, 360, 400];
+        const pointRadii = new Array(lineData.length).fill(0);
+        pointRadii[lineData.length - 1] = 10;
+        const pointStyles = new Array(lineData.length).fill('circle');
+        pointStyles[lineData.length - 1] = arrowImage;
+        const salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                datasets: [{
+                    type: 'bar',
+                    label: 'Métrica A',
+                    data: [100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 580, 600],
+                    backgroundColor: 'rgba(0, 123, 255, 0.7)',
+                }, {
+                    type: 'line',
+                    label: 'Métrica B',
+                    data: lineData,
+                    borderColor: lineColor,
+                    fill: false,
+                    tension: 0.4,
+                    pointRadius: pointRadii,
+                    pointStyle: pointStyles,
+                    pointRotation: 45,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Análise de Tendências e Projeções'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Valores (em milhares)'
+                        },
+                        beginAtZero: true
+                    },
+                    x: {
+                        display: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+
+</html>

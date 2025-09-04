@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Marcos Roberto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+                
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <div class="profile-photo-container">
+                        <img src=".//eu.jpg" alt="Foto de Marcos Roberto" class="profile-photo">
+                    </div>
+                    <a href="index.html" class="profile-name">Marcos Roberto</a>
+                </div>
+                
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sobre.html" class="nav-link">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="formacao.html" class="nav-link">Formação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfolio.html" class="nav-link active">Portfólio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Meu Portfólio</h1>
+                <p class="page-subtitle">Projetos que demonstram minhas habilidades em ciência de dados</p>
+            </div>
+        </section>
+
+        <section class="portfolio-content">
+            <div class="container">
+                <!-- Filtros de projetos -->
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                    <button class="filter-btn" data-filter="viz">Visualização</button>
+                    <button class="filter-btn" data-filter="analytics">Analytics</button>
+                    <button class="filter-btn" data-filter="bi">Business Intelligence</button>
+                </div>
+
+                <!-- Grid de projetos -->
+                <div class="portfolio-grid">
+                    <div class="project-card" data-category="ml">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <div class="project-icon">🤖</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Previsão de Vendas com LSTM</h3>
+                            <p class="project-description">
+                                Modelo de deep learning para previsão de vendas mensais usando redes neurais 
+                                recorrentes (LSTM). Alcançou 92% de precisão em dados de teste.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">LSTM</span>
+                                <span class="tag">Séries Temporais</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Ver Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="viz">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <div class="project-icon">📊</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard Interativo de Vendas</h3>
+                            <p class="project-description">
+                                Dashboard responsivo com visualizações interativas para análise de performance 
+                                de vendas por região, produto e período temporal.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Tableau</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">Dashboard</span>
+                                <span class="tag">KPIs</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Ver Demo</a>
+                                <a href="#" class="project-link">Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="analytics">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <div class="project-icon">📈</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Análise de Churn de Clientes</h3>
+                            <p class="project-description">
+                                Análise abrangente de churn de clientes usando técnicas estatísticas e 
+                                machine learning para identificar fatores de risco e estratégias de retenção.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">Random Forest</span>
+                                <span class="tag">Análise Exploratória</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Ver Relatório</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="ml">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <div class="project-icon">🎯</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Sistema de Recomendação</h3>
+                            <p class="project-description">
+                                Sistema de recomendação de produtos baseado em filtragem colaborativa 
+                                e content-based filtering, implementado para e-commerce.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Scikit-learn</span>
+                                <span class="tag">Collaborative Filtering</span>
+                                <span class="tag">API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Ver Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="bi">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <div class="project-icon">📋</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">ETL Pipeline Automatizado</h3>
+                            <p class="project-description">
+                                Pipeline de ETL automatizado para integração de múltiplas fontes de dados, 
+                                processamento e carregamento em data warehouse.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Apache Airflow</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Documentação</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="analytics">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <div class="project-icon">🔍</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Análise de Sentimento de Reviews</h3>
+                            <p class="project-description">
+                                Processamento de linguagem natural para análise de sentimento em reviews 
+                                de produtos, incluindo classificação e extração de insights.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">NLTK</span>
+                                <span class="tag">spaCy</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Ver Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="viz">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <div class="project-icon">🌐</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Mapa Interativo de Dados COVID</h3>
+                            <p class="project-description">
+                                Visualização interativa de dados epidemiológicos da COVID-19 por região, 
+                                com filtros temporais e métricas dinâmicas.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">D3.js</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Mapas</span>
+                                <span class="tag">APIs</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Ver Mapa</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="ml">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <div class="project-icon">🏠</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Predição de Preços Imobiliários</h3>
+                            <p class="project-description">
+                                Modelo de regressão para predição de preços de imóveis baseado em 
+                                características como localização, área, quartos e amenidades.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">XGBoost</span>
+                                <span class="tag">Feature Engineering</span>
+                                <span class="tag">Regressão</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Ver Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Marcos Roberto - Cientista de Dados. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
